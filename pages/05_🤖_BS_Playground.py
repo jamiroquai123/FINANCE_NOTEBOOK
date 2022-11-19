@@ -16,6 +16,7 @@ def load_data():
                                         "Price": [o.price() for o in x.option],
                                         "S": x.Sset})
 
+
 def plot_data():
     base = alt.Chart(st.session_state.df).properties(
         width=300,
@@ -113,7 +114,7 @@ def plot_data():
         alt.concat(
             alt.vconcat(vega + vegaxrule + vegaxcache, theta + thetaxrule + thetaxcache,
                         delta + deltaxrule + deltaxcache),
-            alt.vconcat(lambdas + lambdaxrule,prices + pricexrule + pricexcache,
+            alt.vconcat(lambdas + lambdaxrule, prices + pricexrule + pricexcache,
                         gamma + gammaxrule + gammaxcache)))
 
 
@@ -138,9 +139,12 @@ if submitted:
     load_data()
 
 if st.session_state.plot:
+    if 'df' not in st.session_state:
+        load_data()
     st.session_state.cache = st.session_state.df
     with st.expander("⚙"):
-        vol = st.slider('vol %', 1, 100, on_change=load_data(), key='volatility_twister', value=st.session_state.volatility)
+        vol = st.slider('vol %', 1, 100, on_change=load_data(), key='volatility_twister',
+                        value=st.session_state.volatility)
         rate = st.slider('rate %', 0.01, 10.0, on_change=load_data(), key='rate_twister',
                          value=st.session_state.interest_rate)
         matu = st.slider('matu year', 0.01, 5.0, on_change=load_data(), key='maturity_twister',
