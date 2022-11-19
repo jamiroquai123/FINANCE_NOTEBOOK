@@ -3,9 +3,6 @@ import pandas as pd
 import numpy as np
 from scipy.stats import norm
 
-
-
-
 class BSOption:
 
     def __init__(self, CP, S, K, T, r, v, q=0):

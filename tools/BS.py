@@ -1,6 +1,5 @@
 import numpy as np
 from scipy.stats import norm
-import pandas as pd
 
 class BSOption:
     def __init__(self, CP, S, K, T, r, v, q=0):
