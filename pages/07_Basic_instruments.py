@@ -41,3 +41,41 @@ st.markdown(
     "how willing banks are to lend money on each other"
     "LIBOR rates involves credit risk, wheareas treasury rates do not, Thus the TED spread serves as a measure of credit "
     "risk in the interbank market. The higher the TED spread correspond to higher perceived risk in lending and vice versa")
+
+st.subheader("Yield Curve")
+
+st.markdown("For major ccy the interest rate paid on bond swap or future are plotted against their maturities, Those graphs are called Yield curves"
+            "there is corporate curves that correspond to yields of bond issued by companies. Because their is higher credit risk"
+            "thoses curves are usually higher and quoted in term of credit spread over libor. They are usually expressed as an annual rate "
+            "to compare them easly. They are usually upward sloping with longer term rate higher than short term")
+
+
+st.subheader("Time value of money")
+
+st.markdown("An investor would prefer take possession of an amount of money today. In order to earn an interest of this money"
+            "if we plan to pay me in one year, and r = 5 i could have earn 5 in this period of time. Therefore i discount it and concider that the present value is"
+            "5 unit loosed ")
+
+st.text("100 dollard future value expressed in today value if rate =5% per year is :")
+st.latex('PV = FV * 1/(1 + i)^n')
+st.latex('100/105')
+st.latex('= 95.24')
+st.text("n being the number of periods over witch we compound the interest")
+
+st.markdown('Also, in this example it was an annual rate applied over a 1 year period. But we can think of coumponding as applying the rate to one period'
+            'and reinvesting the result for another period and so on.'
+            'So the presetn value at time 0 of a payment at time t in the future is given in term of future value')
+
+st.latex('PV = FVe^-rt')
+
+exo = st.expander(label='Exercice : If you make a deposit of 100$ today and interest rate are constant and equals to 10%'
+                        'In the case of annual compounding how many years are needed for the value deposit to double to 200$')
+with exo:
+    st.latex("PV = FV * 1/(1 + i)^n")
+    st.latex("n = ln(PV/FV) / ln(1 + i)")
+    st.latex("n = ln(100/200) / ln(1 + 0,10)")
+    st.markdown("7,27")
+
+
+
+st.markdown("An investor would prefer take possession of an amount of money today. In order to earn an interest of this money")
