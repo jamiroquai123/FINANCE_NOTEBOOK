@@ -102,25 +102,61 @@ st.markdown(
     "Quoted bond display clean prices witch doesn't include accrued interest")
 st.latex('Clean price = Dirty price - accrued interest')
 
-st.markdown('bonds are concidered to be safer instruments than stocks, Bonds can pay higher interest compare to stocks dividend'
-            'Also bonds suffer from less liquidity issues than stocks'
-            'Nonetheless bond are not risk free, because they are a direct function of interest rate. A rise of the market interest'
-            'decrease values of bonds. If the interest rate used to discount the coupon goes up their present value goes down'
-            'Also Bond price depend on the credit rating of the issuer if the risk of credit increase the value of bond decrease. '
-            'Therefore credit risk increase volatility of bond prices. In the case of callable bonds, the bond can be called'
-            'ie bought back by the issuer. Buying a callable bond is equivalent to buying a bond and selling an american call option on this bond.'
-            'When interest rate go down, price of bond increase and issuer tend to exercice their call and buy back the bond')
+st.markdown(
+    'bonds are concidered to be safer instruments than stocks, Bonds can pay higher interest compare to stocks dividend'
+    'Also bonds suffer from less liquidity issues than stocks'
+    'Nonetheless bond are not risk free, because they are a direct function of interest rate. A rise of the market interest'
+    'decrease values of bonds. If the interest rate used to discount the coupon goes up their present value goes down'
+    'Also Bond price depend on the credit rating of the issuer if the risk of credit increase the value of bond decrease. '
+    'Therefore credit risk increase volatility of bond prices. In the case of callable bonds, the bond can be called'
+    'ie bought back by the issuer. Buying a callable bond is equivalent to buying a bond and selling an american call option on this bond.'
+    'When interest rate go down, price of bond increase and issuer tend to exercice their call and buy back the bond')
 
 st.subheader("Zero coupon Bonds")
 
-st.markdown('Zero coupon bonds are debpt investments when the lender receives back a principal amount (also called notional) '
-            'plus interest only at matu. No coupon are paid during the life of the product.'
-            'The interst is deduced upfront and reflected in the price, wich means that is price is lower than 100% of the notional'
-            'it is better in a medium term liquidity perspective because no payment have to be made in the meantime'
-            'The price of such an bond is equal to the present value of the par value')
+st.markdown(
+    'Zero coupon bonds are debpt investments when the lender receives back a principal amount (also called notional) '
+    'plus interest only at matu. No coupon are paid during the life of the product.'
+    'The interst is deduced upfront and reflected in the price, wich means that is price is lower than 100% of the notional'
+    'it is better in a medium term liquidity perspective because no payment have to be made in the meantime'
+    'The price of such an bond is equal to the present value of the par value')
 st.latex('Linear : interest is proportional to the lengh of the loan')
 st.latex('B(t,T) = 1/1+ r(t,T) * (T-t)')
 st.latex('Actuarial : interest is compounded periodically')
 st.latex('B(t,T) = 1/1+ r(t,T))^{(T-t)}')
 st.latex('Continuous : interest is compounded continuously')
 st.latex('B(t,T) =e^{-r(t,T) x (T-t)')
+
+st.header("Equities and currency")
+
+st.subheader('Stocks')
+
+st.markdown(
+    'often companies need cash, and choose to raise it by issuing equity, a share of stock entitle the ownership '
+    'of someone to a corporation, it usually pay dividend, it can be seen as a part of company profit distributed.'
+    'Therefore the price of a stock usually drop by the div amount before the ex-div date.'
+    'if someone beleive the stock will drop he can enter into a repurshase agreement or repo.'
+    'Its a transaction in wwitch an investor borrow the stock and agree to give it back at a certain date.'
+    'You can then borrow the stock sell it and buy it cheaper later on.'
+    'Liquidity is correlated to the stock price. expensive stock are not affordable to anyone and thus suffer from liquidity problem'
+    'corporate action need to be taken account as they can have a large impact on a stock price.'
+    'Stock split and reverse stock split are respectivly used to increase or decrease the number of shares.'
+    'The forward price of a stock is defined as the fair value of the stock. It can be seen as the spot price plus the cost of carrying it'
+    'if spot = 50 and rate is % the forward price is 50e^0,5 * 6/12. As the dividend increase the profit it reduce the cost '
+    'of carrying a stock and so does the repo. Therefore thos parameters decrease the forward price.')
+
+st.latex('F0(T) = S0 * e ^{r-q-b)*T}')
+
+st.subheader('Foreign Exchange')
+
+st.markdown('a ccy is a financial instrument that can be traded in term of spot or forward contracts'
+            'FX future are always quoted in term of dollar per unit of foraign ccy. if the spot exchange rate between GBP and USD '
+            'is equal to two this mean 1GBP = 2 Dollar')
+
+st.latex('F0(T) = S0 * e ^{rd-rf)*T}')
+
+st.markdown(
+    "if a trader want to exchange ccy A for ccy B but cannot find a quote price he can use the available excahnge rates he would then"
+    "compute the cros rate :")
+
+st.latex('A/B = A/C * C/B')
