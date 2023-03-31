@@ -160,3 +160,44 @@ st.markdown(
     "compute the cros rate :")
 
 st.latex('A/B = A/C * C/B')
+
+st.subheader('Indices')
+
+st.markdown(
+    'Index is composed of basket of a stock and provide a way to measure perf of a sector. American SNP Japanese nikkei german dax british ftset '
+    'Hongkong hangseng =')
+
+st.subheader('Exchange traded fund')
+
+st.markdown('Etf hold assets such as stock or bond and try to replicate the price of another assets'
+            'Diversification reduce risk, so many investor are interested in basket of assets or indices. However'
+            'it is impractical to buy indices because of the need to rebalance with the index. Therefore etf can be a great solution.'
+            '')
+
+st.subheader('Forward contracts')
+
+st.markdown(
+    'The forward is an agreement to buy or cell at a certain price at a specified point in the future. It is OTC (over the counter)'
+    'The price agreed to buy or sell is called the strike price.'
+    'One could use the forward for two reason'
+    '(1) the price will increase'
+    '(2) the value of the asset will appreciate and enter into forward to avoid this scenario.'
+    '(3) additionnaly it can serve as hedging instrument'
+    'Generally strike price is equal to the fair value of the forward price at the issue date. This implied that '
+    'usually forward have zero mark to market value'
+    'To price the forward contract one should discount the diff between the forward price and the strike price')
+
+st.latex('Forward(T) = (Ft(T) - K) * e^{-r*(T-t)}')
+
+
+exo_forward = st.expander(
+    label='Exercice : John beleive the stock price of Vodaphone will appreaciate'
+          'Vodaphone is worth £80 and the 1-year LIBOR rate r is 6%, the div yield is equal to 2% and borrowing cost are null'
+          'He enter into a 1 year forward contract allowing him to buy 1000 shares in one year at K=£82.'
+          'After one year Vodaphone spot is £86 Did john realized a profit.')
+with exo_forward:
+    st.latex('Ft(T) = 80^{0,06 - -0,02} = 83')
+    st.latex('Forward(T) = (Ft(T) - 82) * e^{-0,06}')
+    st.latex('Forward(T) = (83 - 82) * e^{-0,06} = £1224')
+    st.latex("johns profit = 1000 * (86 - 82) = £4000")
+    st.markdown("John makes 2776 profit")
