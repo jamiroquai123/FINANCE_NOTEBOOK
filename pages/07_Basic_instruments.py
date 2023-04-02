@@ -189,7 +189,6 @@ st.markdown(
 
 st.latex('Forward(T) = (Ft(T) - K) * e^{-r*(T-t)}')
 
-
 exo_forward = st.expander(
     label='Exercice : John beleive the stock price of Vodaphone will appreaciate'
           'Vodaphone is worth £80 and the 1-year LIBOR rate r is 6%, the div yield is equal to 2% and borrowing cost are null'
@@ -201,3 +200,67 @@ with exo_forward:
     st.latex('Forward(T) = (83 - 82) * e^{-0,06} = £1224')
     st.latex("johns profit = 1000 * (86 - 82) = £4000")
     st.markdown("John makes 2776 profit")
+
+st.subheader('Futures')
+
+st.markdown('A future contract is an obligation to sell or buy at a certain price in the future,'
+            'much like a forward except they are trade on the regular market.'
+            'They are a great option to hedge an equity position or to speculate.'
+            'They are a safer investment than forward because the risk of counterparty is limited by the clearing house act '
+            'that provides margin calls.'
+            'They are market to market on a daily basis to the new future prices.'
+            'The quoted price of the future contract is the future price itself. The fair value of a future is equal to the cash price'
+            'of the asset (The spot value of the asset) plus the cost of carry '
+            'When a future contracts trade above its fair value, a cash and carry arbitrage opportunity arise.'
+            'One would immediatly buy the asset at spot price to hold it until the settlement date and at the same time'
+            'sell the future at the market future price. At delivery date he has done a profit equal to the diff'
+            'between future price and the fair value.'
+            'The opposite occurs when the future is trading below the fair value. One could short sell the asset and take a long position '
+            'on the future')
+
+st.header('SWAPS')
+st.subheader('Interest rate swap')
+
+st.markdown('A specific example is a plain vanilla swap, when two counterparty swap a fixed rate and the floating rate'
+            'Payment are netted, because all cashflow are in the same ccy. For instance a payment of 5% fixed and receipt of '
+            '4% floating will result in a 1% payment'
+            'The payer of a swap is the personn who agrees to pay the fixed rate( and receive the floating rate) The Payer is concern that'
+            'the floating rate will increase.'
+            'The receiver is th personn who aggrees to receive the fixed rate and pay the floating rate on an IRS. He expect'
+            'interest rate to fall and is refered as being short the swap.'
+            'IRS are usefull when it come to borrow money. A compagny may borrow money at fixed rate if they though '
+            'ie are going to increase and the opposite if they think ie will go down')
+
+st.markdown('For instance a 5year and 3month borrowing facility.'
+            '5 years are splited into 3 month period, at the beggining of each 3 month period the 3month libor rate is set'
+            'and aplied to the loan. At the end of each period interest are paid and the new libor rate is set.'
+            'A company with such a facility may approach another institution and arange an IRS. The company would aggree'
+            'to pay LIBOR at the end of 3 month periods in exchange for interest payment.'
+            'A basis swap is a particular type of IRS where floating rate is swapped for a different floating rate.'
+            'To compute the value of a swap, one should calculate the net present value (NPV) of all future cashflows'
+            'Wich is equal to the present value from receiving leg minus the present value from the paying leg.'
+            'Initially it is set up in a way that its value is null. Meaning that someone can enter a swap at zero cost.')
+
+exo_swap = st.expander(
+    label='Exercice : lets E denote the 3month EURIBOR rate. Consider an interest swap contract where Party A pays E to party B '
+          'and party B pays 24% -3 x E to party A.'
+          'Let L denote the notional of this swap. Can you express the deal in simpler terms ')
+with exo_swap:
+    st.markdown('Party A pays E and receive 24% -3E')
+    st.markdown('Then party receive 24% - 4E ==  4 x (8%-E)')
+    st.markdown("This contract is then equivalent to an Interest rate swap Where A (the receiver) receive 8% from B(the payer) and pays E to "
+             "party B"
+             "The notional is equal to 4 x N")
+
+st.subheader('Cross currency swap')
+st.subheader('Total return Swap (TRS)')
+st.markdown('it is a swap aggreement in witch a party pays fixed or float interest and receive total return of an asset'
+            'total return is the capital gain or loss from the asset in addition to any interestor div received during the life'
+            'of the swap. It enables both party to gain exposure to a specific asset without having to pays additional costs')
+
+st.subheader('Asset swap')
+st.markdown('An asset swap is otc agreement in which the payment of one leg are funded by a specific asset, it can be a bond for instance$'
+            'where the coupons are used as payement on one leg of the swap, but generally the bond or the asset underlying this swap does not exchange hand')
+
+st.subheader('dividend swap')
+st.markdown('its an otc on an index or a stock and involve two counter parties who exchanges cashflow based on the div paid.')
