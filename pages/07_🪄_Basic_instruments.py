@@ -1,6 +1,7 @@
 import streamlit as st
 
-chap = ['Introduction', 'Interest Rates', 'Libor Vs Treasury rate', 'Yield Curve', 'Time value of money','Bonds',"Zero coupon Bonds"]
+chap = ['Introduction', 'Interest Rates', 'Libor Vs Treasury rate', 'Yield Curve', 'Time value of money', 'Bonds',
+        "Zero coupon Bonds"]
 
 tabs = st.tabs(chap)
 for tab_name, tab in zip(chap, tabs):
@@ -13,72 +14,70 @@ for tab_name, tab in zip(chap, tabs):
                 " or  : - :red[over the counter] **(OTC)** that are privetly agreed : This include almost all swaps and exo derivatives")
 
             st.markdown(
-                'We first start by interest rate, the most important one is **LIBOR**, witch is :red[the common floating rate for SWAP] but '
+                'We first start by interest rate, the most important one is **LIBOR**, witch is :red[the common floating rate for] :blue[SWAP] but '
                 'also used to compute the present value of future amount of money. We will also introduce :red[discounting method] which'
                 ' are important in the valuation of derivative')
 
             st.markdown(
-                "In the topic of fixed income we will talk about essential debt instruments known as :red[zero coupon]."
-                "Then we will talk about the basics of Equity and CCY market : features of stocks and factor impacting their future prices.")
+                "In the topic of fixed income we will talk about essential debt instruments known as :blue[Zero Coupon Bonds]."
+                "Then we will talk about the basics of Equity and CCY market : features of :blue[stocks] and factor impacting their future prices.")
 
             st.markdown(
-                "Finally we will talk about SWAP and how they are central in the OTC market (the most traded one being the **interest rate SWAP**)"
-                "Then we will talk about cross ccy swap used to transform a loan in one ccy to another to finaly present total"
-                " return swap wich replicate performance of assets such as equity or bonds")
+                "Finally we will talk about :blue[**SWAP**] and how they are central in the OTC market (the most traded one being the"
+                " **interest rate SWAP**) Then we will talk about **Cross Currency SWAP** used to transform red[a loan from one ccy to another] "
+                "to finaly present :blue[**Total Return SWAP**] wich ****:red[replicate performance of assets such as equity or bonds]****")
     elif tab_name == 'Interest Rates':
         with tab:
             st.header(" **INTEREST RATES** ")
             st.markdown(
-                "Ie represent the :red[premium that has to be paid by the borrower or the lender]. This amount of money depend of the "
-                "credit risk (The risk induced by the incapacity of a debtor the reimbourse his debt) Therefore, :red[the higher the credit risk "
+                "**Interest Rate** represent the :red[premium that has to be paid by the borrower or the lender]. This amount of money depend of the "
+                ":blue[**Credit Risk**] (The risk induced by the incapacity of a debtor the reimbourse his debt) Therefore, :red[the higher the credit risk "
                 "the higher the interest rate charged by the lender]")
     elif tab_name == 'Libor Vs Treasury rate':
         with tab:
-            st.subheader("Libor Vs Treasury rate")
+            st.subheader("LIBOR VS TREASURY RATE")
             st.markdown(
-                "Among popular rates, there is **LIBOR** (_the london interbank offered rate_) is the ie at witch banks offer to lend funds "
-                "to other banks in the interbank mkt. **LIBOR** will be a bit higher than the **LIBID** (london interbank bid rate) wich concist in "
-                "**the rate at wich banks accept deposit from other institution**. "
-                "Treasury rate (rates earned from bills or bonds issued by governements), depending on the governement,  "
-                "these can be concidered as free risk rate as we suppose the governement won't fail")
+                "Among popular rates, there is :blue[**LIBOR**] (_the london interbank offered rate_)."
+                "It is the **Interest Rate** at witch banks offer to _lend funds to other banks in the interbank market_. :blue[**LIBOR**] will be a bit higher than the :blue[**LIBID**] "
+                "(_london interbank bid rate_) wich consist in **the rate at wich banks accept deposit from other institution**. "
+                ":red[Treasury rate] (rates earned from bills or bonds issued by governements), depending on the governement,  "
+                "these can be concidered as free risk rate as we suppose the governement won't fail, however derivative trader mays use :blue[LIBOR] rate "
+                "instead of :red[Tresury Rates] for short term risk free rate.")
             st.markdown(
-                "The diff between LIBOR and treasury rate is call the TED spread it can be seen as a measure of interbank lending "
-                "liquidity LIBOR wich correspond to interbank lending compared to risk free rate of treasury bills is an indication of "
+                "The diff between :blue[LIBOR] and :red[Treasury Rate] is call the :blue[**TED**] spread. It can be seen "
+                "as a measure of liquidity in interbank lending. LIBOR wich correspond to interbank lending compared to risk free rate of treasury bills is an indication of "
                 "how willing banks are to lend money on each other"
                 "LIBOR rates involves credit risk, wheareas treasury rates do not, Thus the TED spread serves as a measure of credit "
                 "risk in the interbank market. The higher the TED spread correspond to higher perceived risk in lending and vice versa")
     elif tab_name == 'Yield Curve':
         with tab:
-            st.subheader("Yield Curve")
+            st.subheader("YIELD CURVE")
             st.markdown(
-                "For major ccy the interest rate paid on bond swap or future are plotted against their maturities, Those graphs are called Yield curves"
-                "there is corporate curves that correspond to yields of bond issued by companies. Because their is higher credit risk"
-                "thoses curves are usually higher and quoted in term of credit spread over libor. They are usually expressed as an annual rate "
-                "to compare them easly. They are usually upward sloping with longer term rate higher than short term")
+                "For major ccy the interest rate paid on :red[Bond SWAP or Future] are plotted against their maturities, Those graphs are called "
+                ":red[Yield curves]. There is corporate curves that correspond to yields of bond issued by companies : "
+                "because their is higher credit risk thoses curves are usually higher and quoted in term of credit spread over libor. "
+                "They are usually expressed as an annual rate to compare them easly. They are usually upward sloping with longer term rate higher than short term")
     elif tab_name == 'Time value of money':
         with tab:
-            st.subheader("Time value of money")
+            st.subheader("TIME VALUE OF MONEY")
             st.markdown(
-                "An investor would prefer take possession of an amount of money today. In order to earn an interest on this money"
-                "if we plan to pay me in one year, and r = 5 I could have earn 5 in this period of time. Therefore i "
-                "discount it and concider that the present value is 5 unit discounted")
+                "An investor would prefer take possession of an amount of money today in order to earn an interest"
+                "if we plan to pay me in one year, and r = 5% I could have earn 5% in this period of time. Therefore i "
+                "discount it and consider that the present value is 5 unit discounted")
 
-            st.text("100 dollar future value expressed in today value if rate = 5% per year is :")
-            st.text("with n being the number of periods over witch we compound the interest")
-            st.latex('PV = FV * 1/(1 + i)^n')
-            st.latex('= 100/1,05')
-            st.latex('= 95.24')
+            with st.expander(label="100 dollar future value expressed in today value if rate equal 5% per year is :"):
+                st.text("with n being the number of periods over witch we compound the interest")
+                st.latex('PV = FV * 1/(1 + i)^n')
+                st.latex('= 100/1,05')
+                st.latex('= 95.24')
+                st.markdown(
+                    'Also, in this example it was an annual rate applied over a 1 year period.'
+                    'But we can think of coumponding as applying the rate to one period and reinvesting the result for another period and so on.'
+                    'So the present value at time 0 of a payment at time t in the future is given in term of future value')
 
-            st.markdown(
-                'Also, in this example it was an annual rate applied over a 1 year period.'
-                'But we can think of coumponding as applying the rate to one period and reinvesting the result for another period and so on.'
-                'So the present value at time 0 of a payment at time t in the future is given in term of future value')
-
-            st.latex('PV = FVe^-rt')
-            st.markdown(
-                'Exercice:If you make a deposit of 100$ today and interest rate are constant and equals to 10%'
+                st.latex('PV = FVe^-rt')
+            exo = st.expander(label='If you make a deposit of 100 today and interest rate are constant and equals to 10%'
                 'In the case of annual compounding how many years are needed for the value deposit to double to 200$')
-            exo = st.expander(label='Solution')
             with exo:
                 st.latex("PV = FV * 1/(1 + i)^n")
                 st.latex("n = ln(PV/FV) / ln(1 + i)")
@@ -86,20 +85,20 @@ for tab_name, tab in zip(chap, tabs):
                 st.latex("n = 7,27")
     elif tab_name == 'Bonds':
         with tab:
-            st.subheader("Bonds")
+            st.subheader("BONDS")
 
             st.markdown(
                 'The bond is a debt securitie issued by governement and companies. In exchange of the funds, the holder '
-                'is entilted to receive coupons paid periodicly as well as the return of initial investment. '
-                'The coupon can also be linked to an index, we then talk about floating rate note '
-                'The market price of a bond is equal to the sum of the present value of expected cashflow')
+                'is entitled to :red[receive coupons paid periodically as well as the return of initial investment]. '
+                'The coupon can also be linked to an index, we then talk about :blue[floating rate note] '
+                'The market price of a bond is equal to :red[the sum of the present value of expected cashflow]')
 
             st.text('t the variation rate and C the value that are still to be paid at coupon dates')
-            st.latex('Bond(t,T) = sum{n=1}^{n} CiB(t ,ti)\]')
+            st.latex('Bond(t,T) = \displaystyle\sum_{i=1}^n CiB(t ,ti)')
             st.text('witch is equal to')
-            st.latex('Bond(t,T) = [ \sum_{n=1}^{n} Cie^{-r(t,ti) * (ti-t)}\]')
+            st.latex('Bond(t,T) = \displaystyle\sum_{i=1}^n Cie^{-r(t,ti) * (ti-t)}')
             st.text('expressed in term of yield to maturity')
-            st.latex('Bond(t,T) = [ \sum_{n=1}^{n} Cie^{-y(ti-t)}\]')
+            st.latex('Bond(t,T) =\displaystyle\sum_{i=1}^n Cie^{-y(ti-t)}')
 
             st.markdown(
                 "The price of a bond may include the interest rate that has accrued since the last coupon date"
